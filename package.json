@@ -1,0 +1,17 @@
+{
+  "name": "connectdeveloper",
+  "version": "1.0.0",
+  "description": "app which connects developers",
+  "license": "ISC",
+  "author": "vicky kumar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
