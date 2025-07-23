@@ -5,6 +5,8 @@ import { isAuth } from "./middlewares/isAuth.js";
 import { connectDb } from "./configfiles/database.js";
 import { User } from "./models/user.js";
 import validator from "validator";
+import dotenv from 'dotenv';
+
 
 import cookieParser from "cookie-parser"
 import authRouter from './routes/authRoutes.js'
@@ -20,9 +22,10 @@ credentials: true
   
 
 ))
+dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
-const PORT = 3009;
+const PORT = process.env.PORT || 3009;
 
 // // app.use((req, res) => {
 // //   res.send("Hello from the server");

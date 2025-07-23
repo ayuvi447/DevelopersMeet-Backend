@@ -6,7 +6,7 @@ export const isAuth = async (req, res, next) => {
     const cookie = req.cookies;
     const { token } = cookie;
 
-    const decodedMsg = await jwt.verify(token, "Vicky@123");
+    const decodedMsg = await jwt.verify(token, process.env.JWT_SECRET);
     const { _id } = decodedMsg;
 
     const user = await User.findById(_id);
