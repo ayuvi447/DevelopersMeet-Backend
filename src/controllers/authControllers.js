@@ -77,8 +77,12 @@ export const login = async (req, res) => {
       console.log("Token", token);
 
       res.cookie("token", token, {
-        expires: new Date(Date.now() + 8 * 3600000),
+        httpOnly: true, // ✔️ Prevents JS from accessing the cookie
+        secure: true, // ✔️ Sends cookie only over HTTPS (required on Render)
+        sameSite: "None", // ✔️ Allows frontend-backend on different domains
+        expires: new Date(Date.now() + 8 * 3600000), // 8 hours
       });
+
       res.send(user);
     }
   } catch (error) {
