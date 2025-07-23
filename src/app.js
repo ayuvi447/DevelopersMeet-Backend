@@ -16,12 +16,9 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 const app = express();
 app.use(cors({
-origin:"http://localhost:5173",
-credentials: true
-}
-  
-
-))
+  origin: ["http://localhost:5173", "https://developersmeet-frontend2.onrender.com"], // replace with actual frontend Render URL
+  credentials: true
+}));
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
